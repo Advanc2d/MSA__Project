@@ -1,0 +1,93 @@
+.root {
+    font-family: sans-serif;
+}
+
+.root *,
+.root *:before,
+.root *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.root .wrapper {
+    width: 1140px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.root .clearfix:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+.form1 {
+    padding: 50px 25px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.form1 .header {
+    text-align: center;
+}
+
+.form1 .header .brand {
+    font-weight: bold;
+    font-size: 50px;
+    font-family: "Parisienne", cursive;
+    color: #1259a7;
+}
+
+.form1 .header .message {
+    margin: 25px 0 70px 0;
+    font-size: 20px;
+    font-weight: normal;
+    color: #262626;
+}
+
+.form1 .form label {
+    display: block;
+    margin-bottom: 12.5px;
+}
+
+.form1 .form .first {
+    margin-bottom: 35px;
+}
+
+.form1 .form .second {
+    margin-bottom: 35px;
+}
+
+.form1 .form input {
+    height: 50px;
+    border-radius: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.form1 .form input:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: #146ece;
+}
+
+.form1 .form button {
+    font-size: 16px;
+    height: 50px;
+    display: inline-block;
+    cursor: pointer;
+    background: #1259a7;
+    width: 100%;
+    border: 1px solid #1259a7;
+    box-shadow: none;
+    color: #fff;
+}
+
+.form1 .form button:hover {
+    background: #146ece;
+    background-color: #146ece;
+}

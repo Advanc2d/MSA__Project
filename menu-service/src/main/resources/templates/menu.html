@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Dream Security</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+	rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+</head>
+<script>
+function logout() {
+	location.replace("http://localhost:8000/logout");
+}</script>
+<body style="margin-top: 18%">
+	<div class="icons">
+		<div class="wrapper">
+			<div class="title">
+				<b style="font-size: 50px">Dream </b> <span style="font-size: 50px">Security</span>
+			</div>
+		<!-- 	<div sec:authentication="principal.authorities">
+			<button onclick="logout()" type="button"
+						class="btn btn-outline-secondary btn-sm" style="float: right;">로그아웃</button>
+					<br>
+			</div> -->
+			<div class="menus">
+				<a class="item" href="/manage/register"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">상품 관리(Admin)</span>
+				</a> <a class="item" href="/product/list"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">상품 목록</span>
+				</a> <a class="item" href="/save/check"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">주문 조회</span>
+				</a> <a class="item" href="/list/all"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">신청목록조회(Admin/Manager)</span>
+				</a> <a class="item" href="/status/wait"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">주문상태변경(Manager)</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script></script>
+</body>
+</html>

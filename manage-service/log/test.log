@@ -1,0 +1,84 @@
+2022-03-07 14:52:32.265  INFO 5692 --- [main] c.d.p.ProductManageServiceApplication    : Starting ProductManageServiceApplication using Java 11.0.14 on DESKTOP-548TSVP with PID 5692 (F:\MSAProject\product-manage-service\bin\main started by skyjb in F:\MSAProject\product-manage-service)
+2022-03-07 14:52:32.271  INFO 5692 --- [main] c.d.p.ProductManageServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-03-07 14:52:37.126  INFO 5692 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=67391ad1-5291-3847-8d90-c12dd102aa7c
+2022-03-07 14:52:39.752  INFO 5692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2022-03-07 14:52:39.825  INFO 5692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-07 14:52:39.826  INFO 5692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-07 14:52:40.474  INFO 5692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-07 14:52:40.474  INFO 5692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8082 ms
+2022-03-07 14:52:40.932  WARN 5692 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productManageController' defined in file [F:\MSAProject\product-manage-service\bin\main\com\dream\productmanage\controller\ProductManageController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.dream.productmanage.service.ProductManageService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-03-07 14:52:40.935  INFO 5692 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-07 14:52:44.101  INFO 5692 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-07 14:52:44.265 ERROR 5692 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dream.productmanage.controller.ProductManageController required a bean of type 'com.dream.productmanage.service.ProductManageService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dream.productmanage.service.ProductManageService' in your configuration.
+
+2022-03-07 14:53:16.833  INFO 13124 --- [main] c.d.p.ProductManageServiceApplication    : Starting ProductManageServiceApplication using Java 11.0.14 on DESKTOP-548TSVP with PID 13124 (F:\MSAProject\product-manage-service\bin\main started by skyjb in F:\MSAProject\product-manage-service)
+2022-03-07 14:53:16.836  INFO 13124 --- [main] c.d.p.ProductManageServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-03-07 14:53:17.719  INFO 13124 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=67391ad1-5291-3847-8d90-c12dd102aa7c
+2022-03-07 14:53:18.155  INFO 13124 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2022-03-07 14:53:18.165  INFO 13124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-07 14:53:18.165  INFO 13124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-07 14:53:18.274  INFO 13124 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-07 14:53:18.275  INFO 13124 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1394 ms
+2022-03-07 14:53:18.323  WARN 13124 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productManageController' defined in file [F:\MSAProject\product-manage-service\bin\main\com\dream\productmanage\controller\ProductManageController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.dream.productmanage.service.ProductManageService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-03-07 14:53:18.325  INFO 13124 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-07 14:53:18.342  INFO 13124 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-07 14:53:18.363 ERROR 13124 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dream.productmanage.controller.ProductManageController required a bean of type 'com.dream.productmanage.service.ProductManageService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dream.productmanage.service.ProductManageService' in your configuration.
+
+2022-03-07 14:54:25.977  INFO 4160 --- [main] c.d.p.ProductManageServiceApplication    : Starting ProductManageServiceApplication using Java 11.0.14 on DESKTOP-548TSVP with PID 4160 (F:\MSAProject\product-manage-service\bin\main started by skyjb in F:\MSAProject\product-manage-service)
+2022-03-07 14:54:25.980  INFO 4160 --- [main] c.d.p.ProductManageServiceApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-03-07 14:54:26.800  INFO 4160 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=67391ad1-5291-3847-8d90-c12dd102aa7c
+2022-03-07 14:54:27.259  INFO 4160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2022-03-07 14:54:27.269  INFO 4160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-07 14:54:27.270  INFO 4160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-07 14:54:27.382  INFO 4160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-07 14:54:27.383  INFO 4160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
+2022-03-07 14:54:27.431  WARN 4160 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productManageController' defined in file [F:\MSAProject\product-manage-service\bin\main\com\dream\productmanage\controller\ProductManageController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.dream.productmanage.service.ProductManageService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-03-07 14:54:27.433  INFO 4160 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-03-07 14:54:27.451  INFO 4160 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-03-07 14:54:27.470 ERROR 4160 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.dream.productmanage.controller.ProductManageController required a bean of type 'com.dream.productmanage.service.ProductManageService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.dream.productmanage.service.ProductManageService' in your configuration.
+

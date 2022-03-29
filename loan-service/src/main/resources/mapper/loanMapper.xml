@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dream.loanService.mapper.loanMapper">
+	<select id="bringLoan" resultType="com.dream.loanService.domain.loanProductVO">
+		select * from products where proNo = #{proNo}
+	</select>
+</mapper>

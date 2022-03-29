@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.saveservice.mapper.SaveMapper">
+	<!-- <insert id="save">insert into orders(proNo, userId, orderPrice, term) 
+		values(#{proNo}, #{userId}, #{orderPrice}, #{term})</insert> -->
+	<insert id="save">insert into orders(proNo, userId, orderPrice,
+		orderDate, endDate) values(#{proNo}, #{userId}, #{orderPrice},
+		#{orderDate}, #{endDate})</insert>
+
+	<select id="select"
+      resultType="com.dream.saveservice.dto.SaveDto">
+      <!-- select * from orders where userId=#{userId} -->
+      select b.orderNo, b.proNo, b.userId, b.orderPrice,
+      b.orderDate, b.endDate, b.status, a.proName from products a inner join orders b on a.proNo=b.proNO
+        where userId= #{userId};
+   </select>
+</mapper>

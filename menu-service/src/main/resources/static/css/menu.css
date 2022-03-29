@@ -1,0 +1,107 @@
+body {
+	font-family: sans-serif;
+}
+
+body *, body *:before, body *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body .wrapper {
+	width: 1140px;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 15px;
+}
+
+body .clearfix:after {
+	content: " ";
+	clear: both;
+	display: table;
+}
+
+.icons {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.icons .title {
+	padding-bottom: 20px;
+	font-size: 25px;
+}
+
+.icons .title b {
+	color: #1259a7;
+}
+
+.icons .menus .item {
+	margin: 15px 0;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	float: left;
+	width: 20%;
+}
+
+.icons .menus .item:before {
+	content: " ";
+	display: inline-block;
+	height: 50px;
+	width: 1px;
+	background: #ddd;
+	position: absolute;
+	top: 50%;
+	margin-top: -37px;
+	left: 0;
+}
+
+.icons .menus .item:first-child:before {
+	content: none;
+}
+
+.icons .menus .item .img {
+	display: inline-block;
+	padding: 25px;
+	background: #1259a7;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+
+.icons .menus .item:hover .img {
+	opacity: 0.85;
+}
+
+.icons .menus .item:nth-child(2) .img {
+	background: #224871;
+}
+
+.icons .menus .item:nth-child(3) .img {
+	background: #3d4b56;
+}
+
+.icons .menus .item:nth-child(4) .img {
+	background: #1f2529;
+}
+
+.icons .menus .item .img img {
+	width: 100%;
+}
+
+.icons .menus .item .text {
+	display: block;
+	margin-top: 16px;
+	font-size: 16px;
+	text-align: center;
+}
+
+@media ( max-width :991px) {
+	.icons .menus .item {
+		width: 50%;
+	}
+	.icons .menus .item:before {
+		content: none;
+	}
+}

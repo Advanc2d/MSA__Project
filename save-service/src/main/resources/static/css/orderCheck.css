@@ -1,0 +1,195 @@
+.root {
+    font-family: sans-serif;
+}
+
+.root *,
+.root *:before,
+.root *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.root .wrapper {
+    width: 1140px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.root .clearfix:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+.board1 {
+    margin-bottom: 30px;
+}
+
+.board1 .header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.board1 .header .title {
+    font-size: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    color: #1259a7;
+}
+
+.board1 .header .desc {
+    margin-top: 10px;
+}
+
+.board1 .article table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.board1 .article table th,
+.board1 .article table td {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.board1 .article table th {
+    background: #f7f7f7;
+}
+
+.board1 .article table td.title {
+    text-align: left;
+}
+
+.board1 .article table td a {
+    cursor: pointer;
+}
+
+.board1 .article table td.title span {
+    display: inline-block;
+    padding: 3px 5px;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+.board1 .article table td.title span.new {
+    background: #f71d1d;
+}
+
+.board1 .article table td.title span.update {
+    background: #1259a7;
+}
+
+.board1 .article table td a:hover {
+    text-decoration: underline;
+}
+
+.board1 .article .search {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.board1 .article .search .count {
+    float: left;
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.board1 .article .search .bundle {
+    width: 370px;
+    margin-left: auto;
+}
+
+.board1 .article .search .bundle select {
+    height: 42px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    border-radius: 0;
+    padding: 0 5px;
+    float: left;
+    width: 35%;
+}
+
+.board1 .article .search .bundle input {
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-radius: 0;
+    height: 42px;
+    padding: 0 10px;
+    float: left;
+    width: 53.5%;
+}
+
+.board1 .article .search button {
+    border: 1px solid #1259a7;
+    background: #1259a7;
+    vertical-align: middle;
+    color: #fff;
+    height: 42px;
+    cursor: pointer;
+    padding: 0 13px;
+    float: left;
+    width: 11.5%;
+}
+
+.board1 .article .pages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.board1 .article .pages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.board1 .article .pages ul>li {
+    display: inline-block;
+}
+
+.board1 .article .pages ul>li>a {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 13px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+.board1 .article .pages ul>li>a:hover {
+    background: #eee;
+}
+
+.board1 .article .pages ul>li.active>a {
+    background: #1259a7;
+    border-color: #1259a7;
+    color: #fff
+}
+
+@media(max-width:767px) {
+
+    .board1 .article table .check,
+    .board1 .article table .num,
+    .board1 .article table .date,
+    .board1 .article table .views {
+        display: none;
+    }
+
+    .board1 .article .search .count {
+        display: none;
+    }
+
+    .board1 .article .search .bundle {
+        width: 100%;
+    }
+}

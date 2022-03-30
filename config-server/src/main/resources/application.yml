@@ -9,4 +9,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/JongbaekKIm/Dream_MSA #Github Repository 주소
+         uri: https://github.com/justdoplzz/msa-config-repo   #Github Repository 주소
+         

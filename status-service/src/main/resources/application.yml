@@ -1,15 +1,13 @@
-#외부 : eureka
-#내부 : db, security, keycloak, mybatis
-
 server:
   port: 8006
 
 spring:
   application:
     name: status-service
+  profiles:
+    active: dev
   config:              # gradle에 config 추가.
    import: optional:configserver:http://localhost:8888  # config 서버 위치
-   use-legacy-processing: true #unable to load config data~ 오류 발생시 사용
 ---
  spring:
   devtools:
@@ -24,36 +22,38 @@ management:
    web:
     exposure:
      include: refresh 
----
-# db 설정 
-spring:         
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
-    username: dream
-    password: 1234
----
-# security 설정
-spring:       
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
----  
-#keycloak 설정          
-keycloak:
-  realm: MSA
-  bearer-only: true
-  ssl-required: external
-  resource: spring-gateway-client
-  auth-server-url: http://192.168.1.54:8080/auth
-  credentials:
-    secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
----
-# mybatis 연동 설정   
-mybatis:
-  mapper-locations: classpath*:mapper/*.xml
+     
+     
+#------------------------------------------외부-----------------------------------------
+## db 설정 
+#spring:         
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
+#    username: dream
+#    password: 1234
+#---
+## security 설정
+#spring:       
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
+#---  
+##keycloak 설정          
+#keycloak:
+#  realm: MSA
+#  bearer-only: true
+#  ssl-required: external
+#  resource: spring-gateway-client
+#  auth-server-url: http://192.168.1.54:8080/auth
+#  credentials:
+#    secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
+#---
+## mybatis 연동 설정   
+#mybatis:
+#  mapper-locations: classpath*:mapper/*.xml
 
 
 #외부

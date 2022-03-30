@@ -1,14 +1,15 @@
+#외부 : eureka
+#내부 : db, security, keycloak, mybatis
+
 server:
   port: 8006
 
 spring:
   application:
     name: status-service
-  profiles:
-   active: dev
   config:              # gradle에 config 추가.
    import: optional:configserver:http://localhost:8888  # config 서버 위치
-#   use-legacy-processing: true #unable to load config data~ 오류 발생시 사용
+   use-legacy-processing: true #unable to load config data~ 오류 발생시 사용
 ---
  spring:
   devtools:
@@ -22,48 +23,46 @@ management:
   endpoints:
    web:
     exposure:
-     include: refresh, health, beans #refresh:설정 정보 갱신
+     include: refresh 
+---
+# db 설정 
+spring:         
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
+    username: dream
+    password: 1234
+---
+# security 설정
+spring:       
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
+---  
+#keycloak 설정          
+keycloak:
+  realm: MSA
+  bearer-only: true
+  ssl-required: external
+  resource: spring-gateway-client
+  auth-server-url: http://192.168.1.54:8080/auth
+  credentials:
+    secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
+---
+# mybatis 연동 설정   
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
 
 
-
-## db 설정 
-#spring:         
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://192.168.1.51:3306/dream?serverTimezone=UTC&characterEncoding=UTF-8
-#    username: dream
-#    password: 1234
-    
-## mybatis 연동 설정   
-#mybatis:
-#  mapper-locations: classpath*:mapper/*.xml    
-#---
-## security 설정
-#spring:       
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          jwk-set-uri: http://192.168.1.54:8080/auth/realms/MSA/protocol/openid-connect/certs
-#---  
-##keycloak 설정          
-#keycloak:
-#  realm: MSA
-#  bearer-only: true
-#  ssl-required: external
-#  resource: spring-gateway-client
-#  auth-server-url: http://192.168.1.54:8080/auth
-#  credentials:
-#    secret: WEcACPUTWPfuhPrEz3bBaHcl7OLLmYX1
-    
-# -----------------------외부-------------------------------------------------------------------
-
-## 유레카 클라이언트 설정    
+#외부
+## 유레카 클라이언트 설정   
 #eureka:
 #  instance:
-#    instance-id:  list-microservice-instance  # eureka에 등록되는 id 값
+#    instance-id: status-microservice-instance
 #  client:
-#    register-with-eureka: true  # 유레카에 등록할지 여부.
-#    fetch-registry: true  # 유레카에서 조회할지 여부
+#    register-with-eureka: true
+#    fetch-registry: true
 #    service-url:
-#      defaultZone: http://localhost:8761/eureka # 서비스를 등록할 서버 주소를 지정
+#      defaultZone: http://localhost:8761/eureka

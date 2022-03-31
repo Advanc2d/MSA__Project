@@ -39,7 +39,7 @@ public class SaveController {
 //	}
 
 	@RolesAllowed({ "USER" })
-	@GetMapping("/kafka")
+	@GetMapping("/check")
 	public String sendMsg(String message, Model model, Principal principal)
 			throws JsonMappingException, JsonProcessingException {
 		log.info("---------------------- save/check URL 이동 -----------------------");

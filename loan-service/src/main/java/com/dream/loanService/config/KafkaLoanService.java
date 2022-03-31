@@ -16,9 +16,12 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import com.dream.loanService.domain.Message;
 
+import lombok.extern.slf4j.Slf4j;
+
 //KafkaProducer
 @EnableKafka
 @Configuration
+@Slf4j
 public class KafkaLoanService {
 	
 	@Value("${kafka.server_endpoint}")
@@ -27,6 +30,7 @@ public class KafkaLoanService {
 	@Bean
 	public ProducerFactory<String, Message> producerFactory(){
 		Map<String, Object> configProps = new HashMap<>();
+		log.info(kafkaServerEndpoint+"333333333333333");
 		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServerEndpoint);
 		configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);

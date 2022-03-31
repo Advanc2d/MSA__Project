@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	font-family: sans-serif;
 }
@@ -28,7 +37,10 @@ body .clearfix:after {
 
 .icons .title {
 	padding-bottom: 20px;
-	font-size: 25px;
+	font-size: 75px;
+	margin-top: -5%;
+    margin-bottom: 6%;
+    font-family: 'Cafe24SsurroundAir';
 }
 
 .icons .title b {
@@ -93,8 +105,8 @@ body .clearfix:after {
 .icons .menus .item .text {
 	display: block;
 	margin-top: 16px;
-	font-size: 16px;
 	text-align: center;
+	font-size:23px;
 }
 
 @media ( max-width :991px) {
@@ -104,4 +116,11 @@ body .clearfix:after {
 	.icons .menus .item:before {
 		content: none;
 	}
+}
+
+a {
+  text-decoration-line: none;
+  color:black;
+  font-family: 'Cafe24SsurroundAir';
+  font-weight: bold;
 }

@@ -1,7 +1,11 @@
 .metadata/
+<<<<<<< HEAD
 config-client-test/
 *.project
 kafka_dream/
 gateway-service/src/main/resources/application.yml.rej
 manage-service/.settings/org.springframework.ide.eclipse.boot.prefs
 manage-service/src/main/java/com/dream/manage/config/DBConfiguration.java
+=======
+kafka_dream/
+>>>>>>> ead925592b5d94bd218911e2535fee0227793834

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>금융 상품 등록 페이지</title>
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
 	rel="stylesheet">
@@ -24,32 +25,35 @@
 			location.replace("http://localhost:8000/logout");
 		}
 	</script>
-	<div class="root">
-		<div class="form1">
-			<div class="header">
-				<button onclick="back()" type="button"
-					class="btn btn-outline-secondary btn-sm" style="float: Left;">뒤로가기</button>
-				<button onclick="logout()" type="button"
-						class="btn btn-outline-secondary btn-sm" style="float: right;">로그아웃</button>
-					<br>
-				<div class="brand">Dream Security</div>
-				<div class="message">금융 상품 등록 페이지 입니다.</div>
+	
+	<div class="container">
+			<h1 style="font-weight:bold; font-size:60px;">상품 등록 페이지</h1>
+			<h1 style="font-weight:bold; font-size:30px;"><span th:text="${list.preferred_username}+'님 환영합니다.'"></span></h1>
+			<button onClick="back()" class="button-55" role="button" style="float: left;">뒤로가기</button>
+			<button onClick="logout()" class="button-55" role="button" style="float: right;">로그아웃</button>
+		<form method="post" id="register()">
+			<div class="form-group">
+				<input type="text" id="proName" name="proName" style="margin-top: 9%;"/> <label for="input"
+					class="control-label">금융 상품 이름</label><i class="bar"></i>
 			</div>
-			<form id="register()" method="post">
-				<div class="form">
-					<div class="first">
-						<label for="email">금융상품이름</label> <input type="text" id="proName"
-							name="proName" placeholder="금융상품이름"> <label for="email">대출한도(만원)</label>
-						<input type="Number" id="proLimit" name="proLimit"
-							placeholder="대출한도"> <label for="email">상품설명</label> <input
-							type="text" id="description" name="description"
-							placeholder="상품설명"> <label for="email">만기기간(년)</label> <input
-							type="Number" id="term" name="term">
-					</div>
-					<button type="button" onclick="register()">등록하기</button>
-
-				</div>
-			</form>
+			<div class="form-group">
+				<input type="text" id="proLimit" name="proLimit" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> <label for="input"
+					class="control-label">대출한도(만원)</label><i class="bar"></i>
+			</div>
+			<div class="form-group">
+				<textarea id="description" name="description"></textarea>
+				<label for="textarea" class="control-label">상품 설명</label><i
+					class="bar"></i>
+			</div>
+			<div class="form-group">
+				<input type="text" id="term" name="term" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> <label for="input"
+					class="control-label">만기기간(년)</label><i class="bar"></i>
+			</div>
+		</form>
+		<div class="button-container">
+			<button type="submit" class="button" onClick="register()">
+				<span>제출하기</span>
+			</button>
 		</div>
 	</div>
 

@@ -10,7 +10,7 @@ spring:
    import: optional:configserver:http://localhost:8888  # config 서버 위치
    use-legacy-processing: true #unable to load config data~ 오류 발생시 사용
   kafka:
-    bootstrap-servers: 172.18.0.101:9092
+    bootstrap-servers: 127.0.0.1:9092
 ---
  spring:
   devtools:

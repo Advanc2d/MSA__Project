@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 public class MenuController {
 	@GetMapping("/list")
 	public String menu() {
-		log.info("---------------------- menu/list URL 이동 -----------------------");
 		return "menu";
 	}
 }

@@ -27,44 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 @Slf4j
 public class SaveServiceApplication {
-
-	private SaveService service;
-
 	public static void main(String[] args) {
 		SpringApplication.run(SaveServiceApplication.class, args);
 	}
-	
-	
-	@KafkaListener(topics = "${kafka.topic_name}", groupId = "${kafka.group_id}")
-	public void listener(String message) {
-		log.info("---------------------- save-service kafka 작동 -----------------------");
-		log.info("Received message = {}", message);
-		
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			SaveDto dto = new SaveDto();
-			MessageVo vo = mapper.readValue(message, MessageVo.class);
-			Calendar cal = Calendar.getInstance();
-			cal.setTime(new Date());
-			DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-
-			dto.setProNo(Integer.parseInt(vo.getProNo()));
-			dto.setUserId(vo.getUserId());
-			dto.setOrderPrice(Double.parseDouble(vo.getOrderPrice()));
-
-			dto.setOrderDate(cal.getTime());
-			cal.add(Calendar.YEAR, Integer.parseInt(vo.getTerm()));
-
-			dto.setEndDate(cal.getTime());
-
-
-			service.save(dto);
-
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	
 }

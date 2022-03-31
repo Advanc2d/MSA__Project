@@ -1,2 +1,6 @@
 .metadata/
+<<<<<<< HEAD
 manage-service/.gradle/file-system.probe
+=======
+kafka_dream/
+>>>>>>> 6f8fd987c0691e495a34201a994d217479f0be7c

@@ -28,7 +28,7 @@ public class KafkaLoanService {
 	private String kafkaServerEndpoint;
 	
 	@Bean
-	public ProducerFactory<String, Message> producerFactory(){
+	public ProducerFactory<String, Message> producerFactory(){ //접속하고자 하는 정보 topic
 		Map<String, Object> configProps = new HashMap<>();
 		log.info(kafkaServerEndpoint+"333333333333333");
 		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServerEndpoint);

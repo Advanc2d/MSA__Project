@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dream.manage.dto.ManageDto;
 import com.dream.manage.service.ManageService;
@@ -33,7 +34,6 @@ public class ManageController {
 		return "register";
 	}
 
-
 	@PostMapping(value = "/register", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public void register(@RequestBody ManageDto dto) {
 		log.info(dto.toString());
@@ -41,6 +41,33 @@ public class ManageController {
 		log.info("dto.toString() : " + dto.toString());
 		/* return "regist_success"; */
 	}
+	
+	@GetMapping("/err")
+	public String err() {
+		return "err";
+	}
+	
+//	@RequestMapping("/error")
+//    public String handleError(HttpServletRequest request) {
+//        log.info(request.toString());
+//      Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+//       
+//       if (status != null) {
+//           Integer statusCode = Integer.valueOf(status.toString());
+//       
+//           if(statusCode == HttpStatus.NOT_FOUND.value()) {
+//               return "error-404";
+//           }
+//           else if(statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
+//               return "error-500";
+//           }
+//           else if(statusCode == HttpStatus.FORBIDDEN.value()) {
+//              return "error-403";
+//           }
+//       }
+//      
+//        return "error";
+//    }
 
 	@PostMapping("/modify")
 	public String modify() {

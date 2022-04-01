@@ -14,22 +14,50 @@
 <link href="css/menu.css" rel="stylesheet">
 </head>
 <script>
-function logout() {
-	location.replace("http://localhost:8000/logout");
-}</script>
+	function logout() {
+		location.replace("http://localhost:8000/logout");
+	}
+</script>
 <body style="margin-top: 18%">
 	<div class="icons">
 		<div class="wrapper">
 			<div class="title">
 				<b style="font-size: 50px">Dream </b> <span style="font-size: 50px">Security</span>
 			</div>
-		<!-- 	<div sec:authentication="principal.authorities">
+			<!-- 	<div sec:authentication="principal.authorities">
 			<button onclick="logout()" type="button"
 						class="btn btn-outline-secondary btn-sm" style="float: right;">로그아웃</button>
 					<br>
 			</div> -->
 			<div class="menus">
+			<div sec:authorize="hasRole('ADMIN')">
 				<a class="item" href="/manage/register"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">상품 관리(Admin)</span>
+				</a> <a class="item" href="/product/list"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">상품 목록</span>
+			</div>
+			<div sec:authorize="hasRole('USER')">
+				<a class="item" href="/product/list"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">상품 목록</span>
+				</a> <a class="item" href="/save/check"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">주문 조회</span>
+				</a>
+			</div>
+			<div sec:authorize="hasRole('MANAGER')">
+				<a class="item" href="/status/wait"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">주문상태변경(Manager)</span>
+				</a> <a class="item" href="/list/all"> <span class="img"> <img
+						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</span> <span class="text">신청목록조회(Admin/Manager)</span>
+				</a>
+			</div>
+			
+				<!-- <a class="item" href="/manage/register"> <span class="img">
 						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
 				</span> <span class="text">상품 관리(Admin)</span>
 				</a> <a class="item" href="/product/list"> <span class="img">
@@ -41,10 +69,10 @@ function logout() {
 				</a> <a class="item" href="/list/all"> <span class="img"> <img
 						src="http://s1.publessing.io/img/icons/window1-white-50.png">
 				</span> <span class="text">신청목록조회(Admin/Manager)</span>
-				</a> <a class="item" href="/status/wait"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
+				</a> <a class="item" href="/status/wait"> <span class="img">
+						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
 				</span> <span class="text">주문상태변경(Manager)</span>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</div>

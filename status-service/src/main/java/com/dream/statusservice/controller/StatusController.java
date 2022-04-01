@@ -30,20 +30,20 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StatusController {
 	private final StatusService statusService;
-	
+
 	@RolesAllowed({ "MANAGER" })
-	   @GetMapping("/wait")
-	   public String wait(Model model, Principal principal) throws Exception {
+	@GetMapping("/wait")
+	public String wait(Model model, Principal principal) throws Exception {
 		log.info("---------------------- status/wait URL로 이동  -----------------------");
-	      List<StatusDto> list = statusService.getStatusList();
-	      JwtAuthenticationToken token = (JwtAuthenticationToken) principal;
-	      model.addAttribute("keycloakList", token.getTokenAttributes());
-	      model.addAttribute("list", list);
-	      return "statusList";
-	   }
-	
+		List<StatusDto> list = statusService.getStatusList();
+		JwtAuthenticationToken token = (JwtAuthenticationToken) principal;
+		model.addAttribute("keycloakList", token.getTokenAttributes());
+		model.addAttribute("list", list);
+		return "statusList";
+	}
+
 	@RolesAllowed({ "MANAGER" })
-	@PostMapping({"/update"})
+	@PostMapping({ "/update" })
 	@ResponseBody
 	public void update(@RequestParam Map<String, Object> data) throws JsonProcessingException {
 		log.info("---------------------- save/update URL 작동 -----------------------");
@@ -55,5 +55,10 @@ public class StatusController {
 		for (Datadto data1 : datas) {
 			statusService.getUpdate(data1);
 		}
+	}
+
+	@GetMapping("/err")
+	public String err() {
+		return "err";
 	}
 }

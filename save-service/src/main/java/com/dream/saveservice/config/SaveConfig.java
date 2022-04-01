@@ -24,7 +24,8 @@ public class SaveConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().anyRequest().authenticated().and().oauth2ResourceServer()
-				.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())).and().anonymous().disable();
+				.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())).and().exceptionHandling()
+				.accessDeniedPage("/err").and().anonymous().disable();
 	}
 
 	private Converter<Jwt, ? extends AbstractAuthenticationToken> jwtAuthenticationConverter() {

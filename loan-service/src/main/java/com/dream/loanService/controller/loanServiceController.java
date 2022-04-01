@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class loanServiceController {
 	private final loanService service;
-	
+
 	@RolesAllowed({ "USER" })
 	@GetMapping("/apply")
 	public String apply(@RequestParam(value = "proNo") int proNO, Model model, Principal principal) {
@@ -42,13 +42,13 @@ public class loanServiceController {
 		loanProductVO proVO = new loanProductVO();
 		proVO = service.bringLoan(proNO);
 		model.addAttribute("proVO", proVO);
-		
+
 		System.out.println("여기까지는 담겼다");
-		
-		JwtAuthenticationToken token = (JwtAuthenticationToken) principal;		
+
+		JwtAuthenticationToken token = (JwtAuthenticationToken) principal;
 		model.addAttribute("list", token.getTokenAttributes());
-		
-		log.info("html로 보내기 직전 토큰확인"+token.getTokenAttributes().toString());
+
+		log.info("html로 보내기 직전 토큰확인" + token.getTokenAttributes().toString());
 		return "apply";
 	}
 
@@ -58,7 +58,7 @@ public class loanServiceController {
 
 	@Value(value = "${kafka.topic_name}")
 	private String kafkaTopicName;
-	
+
 	@Value(value = "${kafka.server_endpoint}")
 	private String kafkendPoinst;
 
@@ -88,6 +88,11 @@ public class loanServiceController {
 		});
 
 		return ResponseEntity.ok(status);
+	}
+
+	@GetMapping("/err")
+	public String err() {
+		return "err";
 	}
 
 }

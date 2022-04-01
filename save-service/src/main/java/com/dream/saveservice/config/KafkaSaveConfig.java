@@ -25,7 +25,7 @@ public class KafkaSaveConfig {
 
 	@Bean
 	public ConsumerFactory<String, String> consumerFactory() {
-		
+		System.out.println("-------------------"+kafkaServerEndpoint);
 		Map<String, Object> map = new HashMap<>();
 		map.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServerEndpoint);
 		map.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaGroupId);

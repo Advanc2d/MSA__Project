@@ -27,6 +27,7 @@ public class KafkaLoanService {
 	@Bean
 	public ProducerFactory<String, Message> producerFactory(){
 		Map<String, Object> configProps = new HashMap<>();
+		System.out.println("-------------------"+kafkaServerEndpoint);
 		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaServerEndpoint);
 		configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);

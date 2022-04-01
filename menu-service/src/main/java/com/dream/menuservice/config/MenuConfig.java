@@ -1,4 +1,4 @@
-package com.dream.listservice.config;
+package com.dream.menuservice.config;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,17 +17,17 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 
-
-
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
-public class ListConfig extends WebSecurityConfigurerAdapter {
+public class MenuConfig extends WebSecurityConfigurerAdapter {
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().anyRequest().authenticated()
-				.and().oauth2ResourceServer().jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
-				.and().exceptionHandling().accessDeniedPage("/err")
+		http
+//		.authorizeRequests().anyRequest().authenticated().and()
+		.oauth2ResourceServer()
+				.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
 				.and().anonymous().disable();
 	}
 

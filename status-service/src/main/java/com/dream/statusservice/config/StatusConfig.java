@@ -25,6 +25,7 @@ public class StatusConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().anyRequest().authenticated()
 				.and().oauth2ResourceServer().jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
+				.and().exceptionHandling().accessDeniedPage("/err")
 				.and().anonymous().disable();
 	}
 

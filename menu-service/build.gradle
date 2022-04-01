@@ -20,9 +20,17 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2021.0.1")
+	set('keycloakversion', "16.1.1")
 }
 
 dependencies {
+
+	//시큐리티 test
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.keycloak:keycloak-spring-boot-starter'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -37,6 +45,7 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		mavenBom "org.keycloak.bom:keycloak-adapter-bom:${keycloakversion}"
 	}
 }
 

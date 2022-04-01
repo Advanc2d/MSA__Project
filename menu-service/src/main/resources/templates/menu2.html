@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap"
+	rel="stylesheet">
+<link href="css/menu.css" rel="stylesheet">
+</head>
+<body>
+	<div class="root">
+		<div class="top1">
+			<div class="wrapper">
+				<div class="left">
+					<a href="http://localhost:8000/actuator/health/circuitBreakers/"
+						class="item">CircuitBreaker Check</a>
+				</div>
+				<div class="right">
+					<a href="http://localhost:8000/menu/list" class="item">login</a>
+				</div>
+			</div>
+		</div>
+		<header class="header1">
+			<div class="wrapper">
+				<div class="brand">
+					<a>Dream Bank</a>
+				</div>
+				<nav>
+					<ul>
+						<!-- ALL -->
+						<li><a href="http://localhost:8000/manage/register">상품관리</a>
+							<a href="http://localhost:8000/product/list">대출신청</a> <a
+							href="http://localhost:8000/status/wait">주문관리</a>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div class="banners1"
+			style="background-image: url(img/business-4312920_1280.jpg)">
+			<div class="cover"></div>
+			<div class="wrapper">
+				<div class="header">
+					<div class="title">메뉴 목록</div>
+					<div class="desc">현재 로그인 정보로 접속할 수 있는 서비스 목록입니다.</div>
+				</div>
+
+				<!-- ALL -->
+				<div class="banners">
+					<div class="banner">
+						<a href="http://localhost:8000/manage/register" class="inner">
+							<span class="subject">상품관리</span> <span class="desc">ADMIN
+								권한을 가진 사용자만 이용 가능합니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/product/list" class="inner"> <span
+							class="subject">대출신청</span> <span class="desc">USER 권한을 가진
+								사용자만 이용 가능합니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/status/wait" class="inner"> <span
+							class="subject">주문관리</span> <span class="desc">MANAGER 권한을
+								가진 사용자만 이용 가능합니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/menu/list" class="inner"> <span
+							class="subject">로그인</span> <span class="desc">서비스를 이용하기 위해
+								로그인을 진행합니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/menu.js"></script>
+</body>
+</html>

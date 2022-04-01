@@ -4,7 +4,6 @@ import java.security.Principal;
 
 import javax.annotation.security.RolesAllowed;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

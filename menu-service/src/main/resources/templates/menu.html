@@ -1,8 +1,6 @@
-
-<!doctype html>
-<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
-<title>Dream Security</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
@@ -11,71 +9,158 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
 	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap"
+	rel="stylesheet">
 <link href="css/menu.css" rel="stylesheet">
 </head>
-<script>
-	function logout() {
-		location.replace("http://localhost:8000/logout");
-	}
-</script>
-<body style="margin-top: 18%">
-	<div class="icons">
-		<div class="wrapper">
-			<div class="title">
-				<b style="font-size: 50px">Dream </b> <span style="font-size: 50px">Security</span>
+<body>
+	<div class="root">
+		<div class="top1">
+			<div class="wrapper">
+				<div class="left">
+					<a sec:authorize="isAuthenticated()"
+						href="http://localhost:8000/token" class="item">AccessToken
+						Check</a> <a
+						href="http://localhost:8000/actuator/health/circuitBreakers/"
+						class="item">CircuitBreaker Check</a>
+				</div>
+				<div sec:authorize="isAuthenticated()" class="right">
+					<a href="http://localhost:8000/logout" class="item">logout</a>
+				</div>
+				<div sec:authorize="isAuthenticated()" class="right">
+					<a th:text="${list.preferred_username}+'님 환영합니다.'"></a>
+				</div>
 			</div>
-			<!-- 	<div sec:authentication="principal.authorities">
-			<button onclick="logout()" type="button"
-						class="btn btn-outline-secondary btn-sm" style="float: right;">로그아웃</button>
-					<br>
-			</div> -->
-			<div class="menus">
-			<div sec:authorize="hasRole('ADMIN')">
-				<a class="item" href="/manage/register"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">상품 관리(Admin)</span>
-				</a> <a class="item" href="/product/list"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">상품 목록</span>
+		</div>
+		<header class="header1">
+			<div class="wrapper">
+				<div class="brand">
+					<a>Dream Bank</a>
+				</div>
+				<nav>
+					<ul>
+						<!-- admin -->
+						<li sec:authorize="hasRole('ADMIN')"><a
+							href="http://localhost:8000/manage/list">상품목록</a> <a
+							href="http://localhost:8000/manage/register">상품등록</a> <a
+							href="http://localhost:8000/manage/modify">상품수정</a> <a
+							href="http://localhost:8000/manage/delete">상품삭제</a></li>
+						<!-- user -->
+						<li sec:authorize="hasRole('USER')"><a
+							href="http://localhost:8000/product/list">대출신청</a> <a
+							href="http://localhost:8000/list/check">주문확인</a> <a
+							href="http://localhost:8000/list/cancle">대출취소</a> <a
+							href="http://localhost:8000/list/modify">대출변경</a></li>
+
+						<!-- manager -->
+						<li sec:authorize="hasRole('MANAGER')"><a
+							href="http://localhost:8000/status/wait">대기주문</a> <a
+							href="http://localhost:8000/list/all">전체주문</a> <a
+							href="http://localhost:8000/status/wait">상태수정</a> <a
+							href="http://localhost:8000/list/all">주문삭제</a></li>
+					</ul>
+				</nav>
 			</div>
-			<div sec:authorize="hasRole('USER')">
-				<a class="item" href="/product/list"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">상품 목록</span>
-				</a> <a class="item" href="/save/check"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">주문 조회</span>
-				</a>
-			</div>
-			<div sec:authorize="hasRole('MANAGER')">
-				<a class="item" href="/status/wait"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">주문상태변경(Manager)</span>
-				</a> <a class="item" href="/list/all"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">신청목록조회(Admin/Manager)</span>
-				</a>
-			</div>
-			
-				<!-- <a class="item" href="/manage/register"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">상품 관리(Admin)</span>
-				</a> <a class="item" href="/product/list"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">상품 목록</span>
-				</a> <a class="item" href="/save/check"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">주문 조회</span>
-				</a> <a class="item" href="/list/all"> <span class="img"> <img
-						src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">신청목록조회(Admin/Manager)</span>
-				</a> <a class="item" href="/status/wait"> <span class="img">
-						<img src="http://s1.publessing.io/img/icons/window1-white-50.png">
-				</span> <span class="text">주문상태변경(Manager)</span>
-				</a> -->
+		</header>
+
+		<div class="banners1"
+			style="background-image: url(img/business-4312920_1280.jpg)">
+			<div class="cover"></div>
+			<div class="wrapper">
+				<div class="header">
+					<div class="title">메뉴 목록</div>
+					<div class="desc">현재 로그인 정보로 접속할 수 있는 서비스 목록입니다.</div>
+				</div>
+
+				<!-- admin -->
+				<div sec:authorize="hasRole('ADMIN')" class="banners">
+					<div class="banner">
+						<a href="http://localhost:8000/manage/list" class="inner"> <span
+							class="subject">상품목록</span> <span class="desc">등록된 금융대출
+								상품목록들을 확인 할 수 있습니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/manage/register" class="inner">
+							<span class="subject">상품등록</span> <span class="desc">새로운
+								금융대출 상품을 등록 할 수 있습니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/manage/modify" class="inner"> <span
+							class="subject">상품수정</span> <span class="desc">등록된 금융대출
+								상품을 수정 할 수 있습니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a href="http://localhost:8000/manage/delete" class="inner"> <span
+							class="subject">상품삭제</span> <span class="desc">등록된 금융대출
+								상품을 삭제 할 수 있습니다.</span> <img src="img/window1-point-100.png">
+						</a>
+					</div>
+				</div>
+
+				<!-- USER -->
+				<div sec:authorize="hasRole('USER')" class="banners">
+					<div class="banner">
+						<a class="inner"> <span class="subject">대출신청</span> <span
+							class="desc">금융 대출 상품을 신청할 수 있습니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">주문확인</span> <span
+							class="desc">주문한 금융 대출 상품을 확인합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">대출취소</span> <span
+							class="desc">주문한 금융 대출 상품을 취소합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">대출변경</span> <span
+							class="desc">주문한 금융 대출 상품 금액을 변경합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+				</div>
+
+				<!-- MANAGER -->
+				<div sec:authorize="hasRole('MANAGER')" class="banners">
+					<div class="banner">
+						<a class="inner"> <span class="subject">대기주문</span> <span
+							class="desc">신청된 주문 목록을 확인합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">전체주문</span> <span
+							class="desc">전체 주문 목록을 확인합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">주문변경</span> <span
+							class="desc">신청된 주문목록 상태를 변경합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+					<div class="banner">
+						<a class="inner"> <span class="subject">주문삭제</span> <span
+							class="desc">신청된 주문 목록을 삭제 합니다.</span> <img
+							src="img/window1-point-100.png">
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<script></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/menu.js"></script>
 </body>
 </html>

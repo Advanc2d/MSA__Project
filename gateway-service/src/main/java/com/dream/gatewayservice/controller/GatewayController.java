@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class GatewayController {
 
-	@GetMapping("/")
+	@GetMapping("/token")
 	public String index(@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient) {
 		return authorizedClient.getAccessToken().getTokenValue();
 	}
